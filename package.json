@@ -1,0 +1,23 @@
+{
+  "name": "bhatt_lap1_assignment-yag20",
+  "version": "1.0.0",
+  "description": "Welcome to your first debugging assignment! This repo is riddled with bugs and we need your help to fix it up. Please make sure that you **read all the instructions before starting**.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getfutureproof/bhatt_lap1_assignment-Yag20.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getfutureproof/bhatt_lap1_assignment-Yag20/issues"
+  },
+  "homepage": "https://github.com/getfutureproof/bhatt_lap1_assignment-Yag20#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

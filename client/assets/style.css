@@ -1,0 +1,47 @@
+
+
+
+body {
+  background-image: url('images/newbackground.png');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  width: 50%;
+  border-radius: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  
+  font-family:Corinthia;
+  font-size: 40px;
+}
+
+h3 {
+  font-family: 'Dancing Script', 'cursive';
+}
+
+#submit { background-color: rgb(99, 95, 90);
+color: white;}
+
+footer {
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
+  color: blanchedalmond;
+  
+  justify-content: right;
+  align-items: baseline;
+}
