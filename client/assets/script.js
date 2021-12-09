@@ -10,7 +10,7 @@ function getSearch(e){
   e.preventDefault()
   fetch('http://localhost:3000/search/all')
     .then(resp => resp.text())
-    .then(result=>{document.getElementById('result').textContent= result})
+    .then(result=>{document.getElementById('resultArea').textContent= result})  //could use innerHTML this more secure
 
 };
 
