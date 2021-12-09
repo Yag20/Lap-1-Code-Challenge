@@ -40,10 +40,6 @@ else {
  }
  };
 
- 
-
-
-
 
 app.use(cors());
 
@@ -60,3 +56,5 @@ app.get('/search/single', (req,res) => res.send(getSingleSearch(2)));
 
 // To do: Get the server running
 app.listen(port,() => console.log(`This is from http://localhost:${port}`))  //added
+
+module.exports = app ; // added in review

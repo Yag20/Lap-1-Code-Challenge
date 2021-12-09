@@ -1,7 +1,7 @@
-0const app = require('./server/app'); 
+//  const app = require('./server/app'); 
 
-const button1 = document.querySelector('List10Btn');
-const button2 = document.querySelector('ListSingleBtn');
+const button1 = document.querySelector('#List10Btn');   //added #
+const button2 = document.querySelector('#ListSingleBtn');
 
 
 // event listener for button 1
@@ -9,8 +9,8 @@ button1.addEventListener('click', e => getSearch(e))
 function getSearch(e){
   e.preventDefault()
   fetch('http://localhost:3000/search/all')
-    .then(resp => resp.text)
-    .then(text=>{document.getElementById('result').innerHTML= text})
+    .then(resp => resp.text())
+    .then(result=>{document.getElementById('result').textContent= result})
 
 };
 
@@ -37,9 +37,9 @@ button2.addEventListener('click', function()
 
 
 
-function getSearch(e) {  
-  e.preventDefault()
-  fetch('http://localhost:3000/search/all')
-    .then(resp => resp.text)
-    .then(document.getElementById('result').innerHTML = 'working')
-};  
+// function getSearch(e) {  
+//   e.preventDefault()
+//   fetch('http://localhost:3000/search/all')
+//     .then(resp => resp.text)
+//     .then(document.getElementById('result').innerHTML = 'working')
+// };  
