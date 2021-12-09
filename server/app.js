@@ -1,53 +1,62 @@
 const express = require('express');
-const app = express(); //added semi colons
+const app = express(); 
 const cors = require('cors');
-const port = 3000; // added port 
+const port = 3000; 
 
-let quotes = [
-  '"PERFECT IS THE ENEMY OF GOOD." –VOLTAIRE',
-  '"I’M STILL LEARNING." –MICHELANGELO',
-  '"LIFE IS A JOURNEY, NOT A DESTINATION." –RALPH WALDO EMERSON',
-  '"LEARNING IS NOT ATTAINED BY CHANCE, IT MUST BE SOUGHT FOR WITH ARDOR AND ATTENDED TO WITH DILIGENCE." ―ABIGAIL ADAMS',
-  '"YESTERDAY I WAS CLEVER, SO I CHANGED THE WORLD. TODAY I AM WISE, SO I AM CHANGING MYSELF." –RUMI',
-  '"BE CURIOUS, NOT JUDGMENTAL." –WALT WHITMAN',
-  '"YOU DON’T HAVE TO BE GREAT TO START, BUT YOU HAVE TO START TO BE GREAT." –ZIG ZIGLAR',
-  '"BE STUBBORN ABOUT YOUR GOALS AND FLEXIBLE ABOUT YOUR METHODS." –UNKNOWN',
-  '"NOTHING WILL WORK UNLESS YOU DO." –MAYA ANGELOU',
-  '"NEVER GIVE UP ON A DREAM JUST BECAUSE OF THE TIME IT WILL TAKE TO ACCOMPLISH IT. THE TIME WILL PASS ANYWAY." –EARL NIGHTINGALE',
-  '"ANYONE WHO STOPS LEARNING IS OLD, WHETHER AT TWENTY OR EIGHTY." —HENRY FORD',
-  '"TELL ME AND I FORGET. TEACH ME AND I REMEMBER. INVOLVE ME AND I LEARN." –BENJAMIN FRANKLIN',
-  '"CHANGE IS THE END RESULT OF ALL TRUE LEARNING." ―LEO BUSCAGLIA',
-  '"LIVE AS IF YOU WERE TO DIE TOMORROW. LEARN AS IF YOU WERE TO LIVE FOREVER." ―MAHATMA GANDHI',
-  '"A LEARNING CURVE IS ESSENTIAL TO GROWTH." –TAMMY BJELLAND'
-];
 
-function getRandomQuote () {
- let randomNum=Math.floor(Math.random()*quotes.length);
- quote=quotes[randomNum].tolowercase
-  return quote
-};
+// const searchList = [
+//   { id: 1, name: 'list item 1' },
+//   { id: 2, name: 'list item 2' },
+//   { id: 3, name: 'list item 3'},
+//   { id: 4, name: 'list item 4' },
+//   { id: 5, name: 'list item 5' },
+//   { id: 6, name: 'list item 6'},
+//   { id: 7, name: 'list item 7' },
+//   { id: 8, name: 'list item 8' },
+//   { id: 9, name: 'list item 9'},
+//   { id: 10, name: 'list item 10'},
+// ];
 
-function getQuote (i) {
-if ( i < quotes.length) {
-   return quotes[i]}
+const searchList = [
+  'item1',
+ 'item2', 
+ 'item3',
+ 'item4',
+  'item5', 
+  'item6',
+  'item7',
+  'item8',
+  'item9',
+  'item 10'];
+
+let singleItem="";
+
+function getSingleSearch (i) {
+if ( i < searchList.length) {
+   singleItem = searchList[i];
+   return singleItem;}
 else {
-   return ("No more quotes")
+   return ("No more quotes");
  }
  };
+
+ 
+
+
 
 
 app.use(cors());
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
-// To do: Create a route for retrieving all quotes
-app.get('/quotes/all',(req,res) => res.send(quotes));
+// To do: Create a route for retrieving all search items 
+app.get('/search/all',(req,res) => res.send(searchList));
 
-// To do: Create a route for retrieving a random quote
-app.get('/quotes/random', (req,res) => res.send(getRandomQuote));
+// To do: Create a route for retrieving a single list item 
+app.get('/search/single', (req,res) => res.send(getSingleSearch(2)));
 
 // To do: Add handling for out-of-range index
-app.get('/quotes/:index', (req, res) => res.send(getQuote([req.params.index]));
+// app.get('/quotes/:index', (req, res) => res.send(getQuote([req.params.index]));
 
 // To do: Get the server running
 app.listen(port,() => console.log(`This is from http://localhost:${port}`))  //added

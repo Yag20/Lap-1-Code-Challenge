@@ -1,19 +1,30 @@
-<html>
-  <head>
-    <title>Motivation</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Corinthia&display=swap" rel="stylesheet">;  
-    <script src="assets/script.js"></script>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google searchForm!</title>
+    <script src="server/app.js"></script>
+    <script defer src="assets/script.js"></script>
+</head>
+<body>
   
-  <body>
-    <section>
-      <h1 id='text'>Motivational Quotes</h1>
-      <form>
-        <input id='submit' type='submit' value='get inspired'/>
-      </form>
-      <h3 id='text'></h3>
-    </section>
-    <footer>image by google</footer>
-  </body>
+    <img src="https://assets-client.ccleanerbrowser.com/doodles/ccleaner.png"
+alt="Google"/>
+
+    <form id="searchForm">
+        <label for="name">Search</label>
+        <input type="text" id="name" />
+
+        <input type="submit" value="search">
+    </form>
+    <!-- // button for 10 entries  -->
+    <button id="List10Btn">List 10 entries</button>
+
+    <!-- button for single entry -->
+    <button id="ListSingleBtn">List 1 entry</button>
+
+    <h3 id="result">  Results Go here</h3>
+
+</body>
 </html>
